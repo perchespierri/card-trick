@@ -9,8 +9,9 @@ function App() {
   const stack2 = shuffledDeck.slice(7, 14);
   const stack3 = shuffledDeck.slice(14, 21);
 
-
+  console.log(stack1);
   return (
+  
     <div className="App">  
       <div>
         <Stack stack={stack1} />
