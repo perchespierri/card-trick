@@ -2,10 +2,10 @@ import { SUITS, VALUES } from '../constants';
 
 export function createDeck() {
 	let deck = []; 
-	for(let suit = 0; suit < SUITS.length; suit++)	{
-		for(let value = 0; value < VALUES.length; value++) {
-			let card = [ VALUES[value], SUITS[suit] ];
-			deck.push(card);
+	for(let suitIndex = 0; suitIndex < SUITS.length; suitIndex++)	{
+		for(let valueIndex = 0; valueIndex < VALUES.length; valueIndex++) {
+			const card = { CardValue: VALUES[valueIndex], CardSuit: SUITS[suitIndex] };
+			deck = [...deck, card];
 		}
 	}
 	return deck;
@@ -13,15 +13,15 @@ export function createDeck() {
 
 export function shuffle(array) {
   let currentIndex = array.length;
-  let randomIndex = 0;
-  
+  let tempArray = array;
+
   while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
+    const randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
+    [tempArray[currentIndex], tempArray[randomIndex]] = [
+      tempArray[randomIndex], tempArray[currentIndex]];
   }
   
-  return array;
+  return tempArray;
 }

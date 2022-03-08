@@ -1,14 +1,14 @@
 import React from "react";
 import Card from './Card';
 
-export default function Stack({stack}) {
+export default function Stack({ stackProp }) {
   return (
     <div className="deck">
       <ul>
-        {stack.map(card => (
+        {stackProp.map(card => (
           <Card 
-            card={ card }
-            key={`${card[1]} ${card[0]}`}
+            key={`${card.CardSuit} ${card.CardValue}`}
+            cardProp={ card }
           />
         ))}
       </ul>

@@ -1,30 +1,33 @@
 import { createDeck, shuffle } from './functions';
 import Stack from './components/Stack';
-import './styles/App.css';
+import './styles/global.css';
 
 function App() {
-  const shuffledDeck = shuffle(createDeck()).slice(0, 21);
+  const CARDS_TO_SHOW = 21;
+  const deck = createDeck();
+  const shuffledDeck = shuffle(deck);
+  const deckOf21cards = shuffledDeck.slice(0, CARDS_TO_SHOW);
 
-  const stack1 = shuffledDeck.slice(0, 7);
-  const stack2 = shuffledDeck.slice(7, 14);
-  const stack3 = shuffledDeck.slice(14, 21);
+  // Take 7 cards from deckOf21cards and put on each stack
+  const stack1 = deckOf21cards.slice(0, 7);
+  const stack2 = deckOf21cards.slice(7, 14);
+  const stack3 = deckOf21cards.slice(14, 21);
 
-  console.log(stack1);
   return (
   
     <div className="App">  
       <div>
-        <Stack stack={stack1} />
+        <Stack stackProp={ stack1 } />
         <button> My card is in this stack </button>
       </div>
       
       <div>
-        <Stack stack={stack2} />
+        <Stack stackProp={ stack2 } />
         <button> My card is in this stack </button>
       </div>
       
       <div>
-        <Stack stack={stack3} />
+        <Stack stackProp={ stack3 } />
         <button> My card is in this stack </button>
       </div>
 
