@@ -13,7 +13,7 @@ export function createDeck() {
 
 export function shuffle(array) {
   let currentIndex = array.length;
-  let tempArray = array;
+  const tempArray = [...array];
 
   while (currentIndex !== 0) {
     const randomIndex = Math.floor(Math.random() * currentIndex);
