@@ -1,14 +1,17 @@
 import { createDeck, shuffle } from './functions';
-import './styles/App.css';
+import './styles/global.css';
 
 function App() {
-  const shuffledDeck = shuffle(createDeck()).slice(0, 21);
+  const CARDS_TO_SHOW = 21;
+  const deck = createDeck();
+  const shuffledDeck = shuffle(deck);
+  const deckOf21cards = shuffledDeck.slice(0, CARDS_TO_SHOW);
 
   return (
     <div className="App">  
-      {shuffledDeck.map( card => 
-        <li key={card}> 
-          {`${card[0]} of ${card[1]}`}
+      {deckOf21cards.map( card => 
+        <li key={`${card.CardValue} ${card.CardSuit}`}> 
+          {`${card.CardValue} of ${card.CardSuit}`}
         </li>
       )}
     </div>
