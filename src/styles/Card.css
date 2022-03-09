@@ -19,7 +19,7 @@
   color : red;
 }
 
-.Card .Card__div {
+.Card .Card__suit--image {
 	background-image: url('../images/sprites.png');
   height: 100px;
 	width: 90px;
@@ -27,15 +27,15 @@
   margin-top: 5px;
 }
 
-.Card .Card__div--diamonds {
+.Card .Card__suit--diamonds {
 	background-position-y: 100px;
 }
 
-.Card .Card__div--hearts {
+.Card .Card__suit--hearts {
 	background-position-x: 90px;
 }
 
-.Card .Card__div--clubs {
+.Card .Card__suit--clubs {
 	background-position-x:90px;
 	background-position-y:100px;
 }

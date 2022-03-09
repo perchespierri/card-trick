@@ -7,7 +7,7 @@ export default function Card({ card: {value, suit} }) {
         className={`Card Card--${suit}`}
       >
         {`${value}`}
-        <div className={`Card__div Card__div--${suit}`} />
+        <div className={`Card__suit--image Card__suit--${suit}`} />
       </li>
   )
 }
