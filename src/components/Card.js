@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
+import '../styles/Card.css';
 
-export default function Card({ cardProp: {CardValue, CardSuit} }) { 
+export default function Card({ cardProp: {value, suit} }) { 
   return (
-    <div className="card">
-      <li key={`${CardSuit} ${CardValue}`} >
-        <div className={`card-value ${CardSuit}`}>
-          {`${CardValue}`}
-        </div>
-        <div className={`suit ${CardSuit}`} />
+      <li
+        key={`${suit} ${value}`}
+        className={`Card Card--${suit}`}
+      >
+        {`${value}`}
+        <div className={`Card__div Card__div--${suit}`} />
       </li>
-    </div>
   )
 }

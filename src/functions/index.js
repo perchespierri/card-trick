@@ -4,7 +4,7 @@ export function createDeck() {
 	let deck = []; 
 	for(let suitIndex = 0; suitIndex < SUITS.length; suitIndex++)	{
 		for(let valueIndex = 0; valueIndex < VALUES.length; valueIndex++) {
-			const card = { CardValue: VALUES[valueIndex], CardSuit: SUITS[suitIndex] };
+			const card = { value: VALUES[valueIndex], suit: SUITS[suitIndex] };
 			deck = [...deck, card];
 		}
 	}
@@ -13,7 +13,7 @@ export function createDeck() {
 
 export function shuffle(array) {
   let currentIndex = array.length;
-  let tempArray = array;
+  const tempArray = [...array];
 
   while (currentIndex !== 0) {
     const randomIndex = Math.floor(Math.random() * currentIndex);

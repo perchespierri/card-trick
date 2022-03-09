@@ -1,0 +1,41 @@
+.Stack .Card {
+  border: solid 2px rgb(0, 0, 0);
+  display: inline-block;
+  border-radius: 10px;
+  width: 100px;
+  height: 150px;
+  background-color: rgb(255, 255, 255);
+  padding: 3px;
+  margin: 5px;
+}
+
+.Card {
+  font-size:25px;
+  font-weight: bold;
+}
+
+.Card--diamonds,
+.Card--hearts {
+  color : red;
+}
+
+.Card .Card__div {
+	background-image: url('../images/sprites.png');
+  height: 100px;
+	width: 90px;
+  margin-left: 8px;
+  margin-top: 5px;
+}
+
+.Card .Card__div--diamonds {
+	background-position-y: 100px;
+}
+
+.Card .Card__div--hearts {
+	background-position-x: 90px;
+}
+
+.Card .Card__div--clubs {
+	background-position-x:90px;
+	background-position-y:100px;
+}
