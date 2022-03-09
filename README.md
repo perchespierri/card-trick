@@ -10,10 +10,11 @@ Vercel preview: https://card-trick-three.vercel.app/
 ## Tasks:
 
 ### Task 1
-Generate a 52 cards deck, shuffle and choose 21 random cards for the trick
+- Generate a 52 cards deck, shuffle and choose 21 random cards for the trick
 
 ### Task 2
-Show the user those 21 cards in 3 rows of 7 cards
+- Show the user those 21 cards in 3 rows of 7 cards
+- Source for button css: https://getcssscan.com/css-buttons-examples
 
 ### Task 3 
 Implement the trick:
