@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className='stacks'>  
-      <Stack stackProp={ initialStack } />
+      <Stack stack={ initialStack } />
       <button
         className='btn'
         type='button'
@@ -24,7 +24,7 @@ function App() {
         My card is in this stack
       </button>
     
-      <Stack stackProp={ middleStack } />
+      <Stack stack={ middleStack } />
       <button
         className='btn'
         type='button'
@@ -33,7 +33,7 @@ function App() {
         My card is in this stack
       </button>
     
-      <Stack stackProp={ lastStack } />
+      <Stack stack={ lastStack } />
       <button
         className='btn'
         type='button'

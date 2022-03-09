@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Card({ cardProp: {value, suit} }) { 
+export default function Card({ card: {value, suit} }) { 
   return (
       <li
         key={`${suit} ${value}`}
