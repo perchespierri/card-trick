@@ -12,3 +12,6 @@ html {
 li {
   list-style: none;
 }
+
+@import url('./button.css');
+@import url('./Card.css');

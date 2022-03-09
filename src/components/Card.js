@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/Card.css';
 
 export default function Card({ cardProp: {value, suit} }) { 
   return (

@@ -2,8 +2,8 @@ import { SUITS, VALUES } from '../constants';
 
 export function createDeck() {
 	let deck = []; 
-	for(let suitIndex = 0; suitIndex < SUITS.length; suitIndex++)	{
-		for(let valueIndex = 0; valueIndex < VALUES.length; valueIndex++) {
+  for(let suitIndex in SUITS)	{
+		for(let valueIndex in VALUES) {
 			const card = { value: VALUES[valueIndex], suit: SUITS[suitIndex] };
 			deck = [...deck, card];
 		}
@@ -24,4 +24,9 @@ export function shuffle(array) {
   }
   
   return tempArray;
-}
+};
+
+export function deckSlicer(deck, sliceStart, sliceStop) {
+  const stack = deck.slice(sliceStart, sliceStop);
+  return stack;
+};
