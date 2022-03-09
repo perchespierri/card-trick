@@ -1,16 +1,7 @@
 * {
   padding: 0;
-  font-family: sans-serif;
-}
-
-html { 
-  background: url(../images/background.jpg) 
-    no-repeat center center fixed; 
-  background-size: cover;
 }
 
 li {
   list-style: none;
 }
-
-@import url('./button.css');

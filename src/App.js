@@ -1,46 +1,19 @@
-import { createDeck, shuffle, sliceInThree } from './functions';
-import Stack from './components/Stack';
+import { createDeck, shuffle } from './functions';
 import './styles/global.css';
-const CARDS_TO_SHOW = 21;
 
 function App() {
+  const CARDS_TO_SHOW = 21;
   const deck = createDeck();
   const shuffledDeck = shuffle(deck);
-  const deck21cards = shuffledDeck.slice(0, CARDS_TO_SHOW);
-  const { initialStack, middleStack, lastStack } = sliceInThree(deck21cards);
-
-  const handleClick = () => {
-    console.log('Cheguei aqui')
-  }
+  const deckOf21cards = shuffledDeck.slice(0, CARDS_TO_SHOW);
 
   return (
-    <div className='stacks'>  
-      <Stack stack={ initialStack } />
-      <button
-        className='btn'
-        type='button'
-        onClick={ handleClick }
-      >
-        My card is in this stack
-      </button>
-    
-      <Stack stack={ middleStack } />
-      <button
-        className='btn'
-        type='button'
-        onClick={ handleClick }
-      >
-        My card is in this stack
-      </button>
-    
-      <Stack stack={ lastStack } />
-      <button
-        className='btn'
-        type='button'
-        onClick={ handleClick }
-      >
-        My card is in this stack
-      </button>
+    <div className="App">  
+      {deckOf21cards.map( card => 
+        <li key={`${card.CardValue} ${card.CardSuit}`}> 
+          {`${card.CardValue} of ${card.CardSuit}`}
+        </li>
+      )}
     </div>
   );
 }
