@@ -1,4 +1,4 @@
-import { createDeck, shuffle, sliceDeckInThree } from './functions';
+import { createDeck, shuffle, sliceInThree } from './functions';
 import Stack from './components/Stack';
 import './styles/global.css';
 const CARDS_TO_SHOW = 21;
@@ -6,8 +6,8 @@ const CARDS_TO_SHOW = 21;
 function App() {
   const deck = createDeck();
   const shuffledDeck = shuffle(deck);
-  const deckOf21cards = shuffledDeck.slice(0, CARDS_TO_SHOW);
-  const { initialStack, middleStack, lastStack } = sliceDeckInThree(deckOf21cards);
+  const deck21cards = shuffledDeck.slice(0, CARDS_TO_SHOW);
+  const { initialStack, middleStack, lastStack } = sliceInThree(deck21cards);
 
   const handleClick = () => {
     console.log('Cheguei aqui')

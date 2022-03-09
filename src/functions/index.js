@@ -26,12 +26,13 @@ export function shuffle(array) {
   return tempArray;
 };
 
-export function sliceDeckInThree(deck) {
+export function sliceInThree(deck) {
   const deckToSplice = deck;
-  
-  const initialStack = deckToSplice.splice(0, 7); 
-  const middleStack = deckToSplice.splice(0, 7); 
-  const lastStack = deckToSplice.splice(0, 7); 
+  const CARDS_PER_STACK = 7;
+
+  const initialStack = deckToSplice.splice(0, CARDS_PER_STACK); 
+  const middleStack = deckToSplice.splice(0, CARDS_PER_STACK); 
+  const lastStack = deckToSplice.splice(0, CARDS_PER_STACK); 
   
   return {
     initialStack,
