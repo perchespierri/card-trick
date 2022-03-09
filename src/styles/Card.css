@@ -20,22 +20,24 @@
 }
 
 .Card .Card__suit--image {
-	background-image: url('../images/sprites.png');
   height: 100px;
-	width: 90px;
-  margin-left: 8px;
-  margin-top: 5px;
+  margin: auto;
+}
+
+.Card .Card__suit--spades {
+	background-image: url('../images/spades.png');
+  width: 80px;
 }
 
 .Card .Card__suit--diamonds {
-	background-position-y: 100px;
+	background-image: url('../images/diamonds.png');
+  width: 80px;
 }
 
 .Card .Card__suit--hearts {
-	background-position-x: 90px;
+	background-image: url('../images/hearts.png');
 }
 
 .Card .Card__suit--clubs {
-	background-position-x:90px;
-	background-position-y:100px;
+	background-image: url('../images/clubs.png');
 }
