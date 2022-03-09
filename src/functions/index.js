@@ -26,7 +26,16 @@ export function shuffle(array) {
   return tempArray;
 };
 
-export function deckSlicer(deck, sliceStart, sliceStop) {
-  const stack = deck.slice(sliceStart, sliceStop);
-  return stack;
+export function sliceDeckInThree(deck) {
+  const deckToSplice = deck;
+  
+  const initialStack = deckToSplice.splice(0, 7); 
+  const middleStack = deckToSplice.splice(0, 7); 
+  const lastStack = deckToSplice.splice(0, 7); 
+  
+  return {
+    initialStack,
+    middleStack,
+    lastStack
+  };
 };

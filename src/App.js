@@ -1,4 +1,4 @@
-import { createDeck, shuffle, deckSlicer } from './functions';
+import { createDeck, shuffle, sliceDeckInThree } from './functions';
 import Stack from './components/Stack';
 import './styles/global.css';
 const CARDS_TO_SHOW = 21;
@@ -7,6 +7,7 @@ function App() {
   const deck = createDeck();
   const shuffledDeck = shuffle(deck);
   const deckOf21cards = shuffledDeck.slice(0, CARDS_TO_SHOW);
+  const { initialStack, middleStack, lastStack } = sliceDeckInThree(deckOf21cards);
 
   const handleClick = () => {
     console.log('Cheguei aqui')
@@ -14,7 +15,7 @@ function App() {
 
   return (
     <div className='stacks'>  
-      <Stack stackProp={ deckSlicer(deckOf21cards, 0, 7) } />
+      <Stack stackProp={ initialStack } />
       <button
         className='btn'
         type='button'
@@ -23,7 +24,7 @@ function App() {
         My card is in this stack
       </button>
     
-      <Stack stackProp={ deckSlicer(deckOf21cards, 7, 14) } />
+      <Stack stackProp={ middleStack } />
       <button
         className='btn'
         type='button'
@@ -32,7 +33,7 @@ function App() {
         My card is in this stack
       </button>
     
-      <Stack stackProp={ deckSlicer(deckOf21cards, 14, 21) } />
+      <Stack stackProp={ lastStack } />
       <button
         className='btn'
         type='button'
