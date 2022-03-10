@@ -1,17 +1,32 @@
-import { createDeck, shuffle, sliceInThree } from './functions';
+import React, { useState } from 'react';
+import { createDeck, shuffle, sliceDeckInThree, switchStacks, showEleventhCard } from './functions';
+import { CARDS_TO_USE_TRICK_1 } from './constants';
 import Stack from './components/Stack';
 import './styles/global.css';
-const CARDS_TO_SHOW = 21;
+
+const deck = createDeck();
+const shuffledDeck = shuffle(deck);
+const deck21cards = shuffledDeck.slice(0, CARDS_TO_USE_TRICK_1);
+const { stack1, stack2, stack3 } = sliceDeckInThree(deck21cards);
 
 function App() {
-  const deck = createDeck();
-  const shuffledDeck = shuffle(deck);
-  const deck21cards = shuffledDeck.slice(0, CARDS_TO_SHOW);
-  const { initialStack, middleStack, lastStack } = sliceInThree(deck21cards);
+  const [initialStack, setInitialStack] = useState(stack1);
+  const [middleStack, setMiddleStack] = useState(stack2);
+  const [lastStack, setLastStack] = useState(stack3);
+  const [buttonCounter, setButtonCounter] = useState(0);
 
-  const handleClick = () => {
-    console.log('Cheguei aqui')
-  }
+  const handleClick = (stackName) => {
+    let newDeck = []
+
+    const switchedDeck = switchStacks(newDeck, stackName, initialStack, middleStack, lastStack);
+
+    const { stack1, stack2, stack3 } = sliceDeckInThree(switchedDeck);
+
+    setInitialStack(stack1);
+    setMiddleStack(stack2);
+    setLastStack(stack3);
+    setButtonCounter(buttonCounter + 1)
+  };
 
   return (
     <div className='stacks'>  
@@ -19,7 +34,8 @@ function App() {
       <button
         className='btn'
         type='button'
-        onClick={ handleClick }
+        value='initial'
+        onClick={ ({ target: { value } }) => handleClick(value) }
       >
         My card is in this stack
       </button>
@@ -28,7 +44,8 @@ function App() {
       <button
         className='btn'
         type='button'
-        onClick={ handleClick }
+        value='middle'
+        onClick={ ({ target: { value } }) => handleClick(value) }
       >
         My card is in this stack
       </button>
@@ -37,10 +54,14 @@ function App() {
       <button
         className='btn'
         type='button'
-        onClick={ handleClick }
+        value='last'
+        onClick={ ({ target: { value } }) => handleClick(value) }
       >
         My card is in this stack
       </button>
+      <div className='eleventhCard'>
+      { showEleventhCard(buttonCounter, middleStack[3]) }
+      </div>
     </div>
   );
 }
