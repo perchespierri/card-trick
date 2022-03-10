@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createDeck, sliceDeckInThree, switchStacks, showEleventhCard } from './functions/deck.js';
+import { createDeck, sliceDeckInThree, switchStacks } from './functions/deck.js';
 import { shuffle } from './functions/array.js';
 import { CARDS_TO_USE_TRICK_1 } from './constants';
 import Stack from './components/Stack';
@@ -35,7 +35,7 @@ function App() {
         className='btn'
         type='button'
         value='initial'
-        onClick={ ({ target: { value } }) => handleClick(value) }
+        onClick={ () => handleClick('initial') }
       >
         My card is in this stack
       </button>
@@ -45,7 +45,7 @@ function App() {
         className='btn'
         type='button'
         value='middle'
-        onClick={ ({ target: { value } }) => handleClick(value) }
+        onClick={ () => handleClick('middle') }
       >
         My card is in this stack
       </button>
@@ -55,7 +55,7 @@ function App() {
         className='btn'
         type='button'
         value='last'
-        onClick={ ({ target: { value } }) => handleClick(value) }
+        onClick={ () => handleClick('last') }
       >
         My card is in this stack
       </button>
