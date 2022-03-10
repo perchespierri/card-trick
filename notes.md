@@ -9,3 +9,18 @@ mostrar a décima primeira carta (do começo ou do fim?)
 
 
 
+<Stack stack={ initialStack } onClick={handleClick} /> 
+
+export default function Stack({ stack, onClick }) {
+  return (
+    <ul className='Stack'>
+      {stack.map(card => (
+        <Card 
+          key={`${card.value} of ${card.suit}`}
+          card={ card }
+          onClick={ () => onClick('initial') }
+        />
+      ))}
+    </ul>
+  )
+}

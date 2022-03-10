@@ -13,7 +13,6 @@ const shuffleEmptyArray = shuffle([]);
 describe("Function shuffle should return a shuffled array", () => {
   it("Shuffled array has same elements and length than the original", () => {
     expect(arrayOfTruth).toStrictEqual([true, true, true, true, true]);
-    // melhorar com o arryContaining e etc 
   });
 
   it("Ordered and shuffled arrays are actually different", () => {
@@ -21,14 +20,14 @@ describe("Function shuffle should return a shuffled array", () => {
   });
 
   it("Given an empty array, returns it", () => {
-    expect(shuffleEmptyArray).toStrictEqual('Use an iterable array');
+    expect(shuffleEmptyArray).toStrictEqual([]);
   });
 
-  it("Given no arguments, returns nothing", () => {
-    expect(shuffle([])).toStrictEqual('Use an iterable array');
+  it("Given no arguments, returns error message", () => {
+    expect(shuffle()).toStrictEqual('Use an iterable array');
   });
   
-  it("Given an array of 1 item, returns it", () => {
+  it("Given an array of 1 item, returns error message", () => {
     expect(shuffle(2)).toStrictEqual('Use an iterable array');
   });
 

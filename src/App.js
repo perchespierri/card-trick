@@ -36,7 +36,7 @@ function App() {
       <ChosenCard card={middleStack[3]} />
     </div>) : (
         <div className='stacks'>  
-        <Stack stack={ initialStack } />
+        <Stack stack={ initialStack } /> 
         <button
           className='btn'
           type='button'

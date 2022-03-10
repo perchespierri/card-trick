@@ -1,5 +1,5 @@
 export function shuffle(array) {
-  if (array.length === 0 || typeof array === 'number') {
+  if (!Array.isArray(array)) {
     return 'Use an iterable array';
   }
   
