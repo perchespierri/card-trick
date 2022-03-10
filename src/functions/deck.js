@@ -41,10 +41,8 @@ export function switchStacks(deckToSwitch, stackName, initialStack, middleStack,
       deckToSwitch = [...middleStack, ...initialStack, ...lastStack]
       break;
     case 'middle':
-      if(Math.floor(Math.random() * 2 + 1) === 2) {
-        return deckToSwitch = [...lastStack, ...middleStack, ...initialStack]
-      }
-      else return deckToSwitch = [...initialStack, ...middleStack, ...lastStack]
+      deckToSwitch = [...lastStack, ...middleStack, ...initialStack]
+      break;
     case 'last':
       deckToSwitch = [...initialStack, ...lastStack, ...middleStack]
       break;
@@ -56,13 +54,8 @@ export function switchStacks(deckToSwitch, stackName, initialStack, middleStack,
 }
 
 export function showEleventhCard(buttonCounter, card) {
-  if (buttonCounter % 3 === 0 && buttonCounter > 0) { 
-    console.log('Clicou ' + buttonCounter + ' vezes');
-    return (
-      <div>
-        <br />
-        <h1>YOUR CARD IS {`${card.value} of ${card.suit}`}</h1>
-      </div>
-    );
+  if (buttonCounter === 3) { 
+    console.log(card);
+    return 'Fim';
   } 
 }
