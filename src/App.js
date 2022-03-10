@@ -59,9 +59,6 @@ function App() {
       >
         My card is in this stack
       </button>
-      <div className='eleventhCard'>
-      { showEleventhCard(trickStep, middleStack[3]) }
-      </div>
     </div>
   );
 }

@@ -54,10 +54,3 @@ export function switchStacks(stackName, initialStack, middleStack, lastStack) {
 
   return deckToSwitch;
 }
-
-export function showEleventhCard(buttonCounter, card) {
-  if (buttonCounter === 3) { 
-    console.log(card);
-    return 'Fim';
-  } 
-}

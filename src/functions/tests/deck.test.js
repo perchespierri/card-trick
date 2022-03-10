@@ -1,4 +1,4 @@
-import { showEleventhCard, createDeck, sliceDeckInThree, switchStacks } from '../deck.js';
+import { createDeck, sliceDeckInThree, switchStacks } from '../deck.js';
 
 const testDeck52cards = createDeck();
 const slicedDeck52Cards = sliceDeckInThree(testDeck52cards);
@@ -10,18 +10,6 @@ const { stack1, stack2, stack3 } = slicedDeck21Cards;
 const switchInitial = switchStacks('initial', stack1, stack2, stack3);
 const switchMiddle = switchStacks('middle', stack1, stack2, stack3);
 const switchLast = switchStacks('last', stack1, stack2, stack3);
-
-describe("Function showEleventhCard", () => {
-  it("Does not show chosen card if buttonCounter !== 3", () => {
-    const eleventhCardError = showEleventhCard(1, stack1[0]);
-    expect(eleventhCardError).toStrictEqual();
-  });
-  
-  it("Shows chosen card if buttonCounter === 3", () => {
-    const eleventhCardRight = showEleventhCard(3, stack1[0]);
-    expect(eleventhCardRight).toStrictEqual('Fim');
-  });
-});
 
 describe("Function createDeck", () => {
   it("Creates a deck of 52 cards", () => {
