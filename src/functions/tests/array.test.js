@@ -8,9 +8,27 @@ const arrayOfTruth = shuffledArray.map((element) => {
   else return false
 });
 
+const shuffleEmptyArray = shuffle([]);
+
 describe("Function shuffle should return a shuffled array", () => {
   it("Shuffled array has same elements and length than the original", () => {
     expect(arrayOfTruth).toStrictEqual([true, true, true, true, true]); 
+  });
+
+  it("Ordered and shuffled arrays are actually different", () => {
+    expect(orderedArray).not.toStrictEqual(shuffledArray)
+  });
+
+  it("Given an empty array, returns it", () => {
+    expect(shuffleEmptyArray).toStrictEqual('Use an iterable array');
+  });
+
+  it("Given no arguments, returns nothing", () => {
+    expect(shuffle([])).toStrictEqual('Use an iterable array');
+  });
+  
+  it("Given an array of 1 item, returns it", () => {
+    expect(shuffle(2)).toStrictEqual('Use an iterable array');
   });
 
 });
