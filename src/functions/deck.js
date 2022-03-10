@@ -11,18 +11,22 @@ export function createDeck() {
 	return deck;
 };
 
-export function sliceDeckInThree(deckParam) {
-  const deck = deckParam;
-  
-  let stack1 = []; // index 0 3 6 9  12 15 18 = " index % 3 === 0 "
-  let stack2 = []; // index 1 4 7 10 13 16 19
-  let stack3 = []; // index 2 5 8 11 14 17 20
+export function sliceDeckInThree(deck) {
+  const numberOfStacks = 3;
+  const stack1Index = 0;
+  const stack2Index = 1;
 
-  deck.forEach((card, cardIndex) => { // alterar a forma como isso é feito
-    if (cardIndex % 3 === 0) {
+  let stack1 = [];
+  let stack2 = [];
+  let stack3 = [];
+
+  deck.forEach((card, cardIndex) => {
+    const stackIndex = cardIndex % numberOfStacks;
+    
+    if (stackIndex === stack1Index) {
       return stack1 = [...stack1, card];
     };
-    if ([1, 4, 7, 10, 13, 16, 19].includes(cardIndex)) {
+    if (stackIndex === stack2Index) {
       return stack2 = [...stack2, card];
     };
     return stack3 = [...stack3, card];

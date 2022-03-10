@@ -3,6 +3,7 @@ import { createDeck, sliceDeckInThree, switchStacks } from './functions/deck.js'
 import { shuffle } from './functions/array.js';
 import { CARDS_TO_USE_TRICK_1 } from './constants';
 import Stack from './components/Stack';
+import ChosenCard from './components/ChosenCard';
 import './styles/global.css';
 
 const deck = createDeck();
@@ -30,36 +31,39 @@ function App() {
     setTrickStep(trickStep + 1)
   };
 
-  return (
-    <div className='stacks'>  
-      <Stack stack={ initialStack } />
-      <button
-        className='btn'
-        type='button'
-        onClick={ () => handleClick('initial') }
-      >
-        My card is in this stack
-      </button>
-    
-      <Stack stack={ middleStack } />
-      <button
-        className='btn'
-        type='button'
-        onClick={ () => handleClick('middle') }
-      >
-        My card is in this stack
-      </button>
-    
-      <Stack stack={ lastStack } />
-      <button
-        className='btn'
-        type='button'
-        onClick={ () => handleClick('last') }
-      >
-        My card is in this stack
-      </button>
-    </div>
-  );
+  return (trickStep === 3 ? (
+    <div>
+      <ChosenCard card={middleStack[3]} />
+    </div>) : (
+        <div className='stacks'>  
+        <Stack stack={ initialStack } />
+        <button
+          className='btn'
+          type='button'
+          onClick={ () => handleClick('initial') }
+        >
+          My card is in this stack
+        </button>
+      
+        <Stack stack={ middleStack } />
+        <button
+          className='btn'
+          type='button'
+          onClick={ () => handleClick('middle') }
+        >
+          My card is in this stack
+        </button>
+      
+        <Stack stack={ lastStack } />
+        <button
+          className='btn'
+          type='button'
+          onClick={ () => handleClick('last') }
+        >
+          My card is in this stack
+        </button>
+      </div>
+    ));
 }
 
 export default App;

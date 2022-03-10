@@ -12,7 +12,8 @@ const shuffleEmptyArray = shuffle([]);
 
 describe("Function shuffle should return a shuffled array", () => {
   it("Shuffled array has same elements and length than the original", () => {
-    expect(arrayOfTruth).toStrictEqual([true, true, true, true, true]); 
+    expect(arrayOfTruth).toStrictEqual([true, true, true, true, true]);
+    // melhorar com o arryContaining e etc 
   });
 
   it("Ordered and shuffled arrays are actually different", () => {

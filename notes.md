@@ -6,3 +6,6 @@ mandar essas 3 stacks pra cada <Stack />
 repetir isso até count = 3
 juntar essas stacks em um novo deck
 mostrar a décima primeira carta (do começo ou do fim?)
+
+
+
