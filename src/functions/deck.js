@@ -18,7 +18,7 @@ export function sliceDeckInThree(deckParam) {
   let stack2 = []; // index 1 4 7 10 13 16 19
   let stack3 = []; // index 2 5 8 11 14 17 20
 
-  deck.forEach((card, cardIndex) => {
+  deck.forEach((card, cardIndex) => { // alterar a forma como isso é feito
     if (cardIndex % 3 === 0) {
       return stack1 = [...stack1, card];
     };
@@ -42,13 +42,11 @@ export function switchStacks(stackName, initialStack, middleStack, lastStack) {
     case 'initial':
       deckToSwitch = [...middleStack, ...initialStack, ...lastStack]
       break;
-    case 'middle':
-      deckToSwitch = [...lastStack, ...middleStack, ...initialStack]
-      break;
     case 'last':
       deckToSwitch = [...initialStack, ...lastStack, ...middleStack]
       break;
     default:
+      deckToSwitch = [...lastStack, ...middleStack, ...initialStack]
       break;
   }
 
