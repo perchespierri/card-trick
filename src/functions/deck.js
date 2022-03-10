@@ -40,19 +40,12 @@ export function sliceDeckInThree(deck) {
 };
 
 export function switchStacks({stackName, initialStack, middleStack, lastStack}) {
-  let deckToSwitch = []
-
   switch (stackName) {
     case 'initial':
-      deckToSwitch = [...middleStack, ...initialStack, ...lastStack]
-      break;
+      return [...middleStack, ...initialStack, ...lastStack]
     case 'last':
-      deckToSwitch = [...initialStack, ...lastStack, ...middleStack]
-      break;
+      return [...initialStack, ...lastStack, ...middleStack]
     default:
-      deckToSwitch = [...lastStack, ...middleStack, ...initialStack]
-      break;
+      return [...lastStack, ...middleStack, ...initialStack]
   }
-
-  return deckToSwitch;
 }
