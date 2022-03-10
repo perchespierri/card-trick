@@ -17,9 +17,8 @@ function App() {
   const [trickStep, setTrickStep] = useState(0);
 
   const handleClick = (stackName) => {
-    let newDeck = []
 
-    const switchedDeck = switchStacks(newDeck, stackName, initialStack, middleStack, lastStack);
+    const switchedDeck = switchStacks(stackName, initialStack, middleStack, lastStack);
 
     const { stack1, stack2, stack3 } = sliceDeckInThree(switchedDeck);
 
