@@ -25,8 +25,8 @@ Implement the trick:
 Every function must have tests
 
 ### Task 4
-Reveal the card chosen!
-Create a 'Play again' button
+- Reveal the chosen card
+- Create a 'Play again' button
   - Which returns a newly shuffled and random set of 21 cards
 
 ### Task 5
