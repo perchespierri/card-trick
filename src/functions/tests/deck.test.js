@@ -7,9 +7,9 @@ const testDeck21Cards = testDeck52cards.slice(0, 21);
 const slicedDeck21Cards = sliceDeckInThree(testDeck21Cards);
 
 const { stack1, stack2, stack3 } = slicedDeck21Cards;
-const switchInitial = switchStacks('initial', stack1, stack2, stack3);
-const switchMiddle = switchStacks('middle', stack1, stack2, stack3);
-const switchLast = switchStacks('last', stack1, stack2, stack3);
+const switchInitial = switchStacks({ stackName: 'initial', initialStack: stack1, middleStack: stack2, lastStack: stack3 });
+const switchMiddle = switchStacks({ stackName: 'middle', initialStack: stack1, middleStack: stack2, lastStack: stack3 });
+const switchLast = switchStacks({ stackName: 'last', initialStack: stack1, middleStack: stack2, lastStack: stack3 });
 
 describe("Function createDeck", () => {
   it("Creates a deck of 52 cards", () => {
