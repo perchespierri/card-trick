@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { createDeck, sliceDeckInThree, switchStacks, showEleventhCard } from './functions/deck.js';
-import { shuffle } from './functions/shuffle.js';
+import { shuffle } from './functions/array.js';
 import { CARDS_TO_USE_TRICK_1 } from './constants';
 import Stack from './components/Stack';
 import './styles/global.css';
