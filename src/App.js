@@ -14,7 +14,7 @@ function App() {
   const [initialStack, setInitialStack] = useState(stack1);
   const [middleStack, setMiddleStack] = useState(stack2);
   const [lastStack, setLastStack] = useState(stack3);
-  const [buttonCounter, setButtonCounter] = useState(0);
+  const [trickStep, setTrickStep] = useState(0);
 
   const handleClick = (stackName) => {
     let newDeck = []
@@ -26,7 +26,7 @@ function App() {
     setInitialStack(stack1);
     setMiddleStack(stack2);
     setLastStack(stack3);
-    setButtonCounter(buttonCounter + 1)
+    setTrickStep(trickStep + 1)
   };
 
   return (
@@ -61,7 +61,7 @@ function App() {
         My card is in this stack
       </button>
       <div className='eleventhCard'>
-      { showEleventhCard(buttonCounter, middleStack[3]) }
+      { showEleventhCard(trickStep, middleStack[3]) }
       </div>
     </div>
   );
