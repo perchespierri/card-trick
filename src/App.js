@@ -18,7 +18,9 @@ function App() {
 
   const handleClick = (stackName) => {
 
-    const switchedDeck = switchStacks({ stackName, initialStack, middleStack, lastStack });
+    const switchedDeck = switchStacks({
+      stackName, initialStack, middleStack, lastStack
+    });
 
     const { stack1, stack2, stack3 } = sliceDeckInThree(switchedDeck);
 
@@ -34,7 +36,6 @@ function App() {
       <button
         className='btn'
         type='button'
-        value='initial'
         onClick={ () => handleClick('initial') }
       >
         My card is in this stack
@@ -44,7 +45,6 @@ function App() {
       <button
         className='btn'
         type='button'
-        value='middle'
         onClick={ () => handleClick('middle') }
       >
         My card is in this stack
@@ -54,7 +54,6 @@ function App() {
       <button
         className='btn'
         type='button'
-        value='last'
         onClick={ () => handleClick('last') }
       >
         My card is in this stack
