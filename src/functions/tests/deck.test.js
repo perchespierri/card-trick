@@ -7,9 +7,9 @@ const testDeck21Cards = testDeck52cards.slice(0, 21);
 const slicedDeck21Cards = sliceDeckInThree(testDeck21Cards);
 
 const { stack1, stack2, stack3 } = slicedDeck21Cards;
-const switchInitial = switchStacks(slicedDeck21Cards, 'initial', stack1, stack2, stack3);
-const switchMiddle = switchStacks(slicedDeck21Cards, 'middle', stack1, stack2, stack3);
-const switchLast = switchStacks(slicedDeck21Cards, 'last', stack1, stack2, stack3);
+const switchInitial = switchStacks('initial', stack1, stack2, stack3);
+const switchMiddle = switchStacks('middle', stack1, stack2, stack3);
+const switchLast = switchStacks('last', stack1, stack2, stack3);
 
 describe("Function showEleventhCard", () => {
   it("Does not show chosen card if buttonCounter !== 3", () => {
