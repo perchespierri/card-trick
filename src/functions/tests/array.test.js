@@ -8,7 +8,7 @@ describe("Function shuffle", () => {
     expect(orderedArray).not.toStrictEqual(shuffledArray)
   });
 
-  it('Given an array, returns same elements in shuffled order', () => {
+  it('Given an array, returns an array containing same elements from original', () => {
     const testArray = [1, 2, 3, 4, 5];
     const shuffledTestArray = shuffle(testArray);
 
