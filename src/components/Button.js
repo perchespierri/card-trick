@@ -7,7 +7,7 @@ export default function Button({ value, onClick }) {
       type='button'
       onClick={ () => onClick(value) }
     >
-      My card is in this stack
+      My card is in this stack !
     </button>
   )
 }
