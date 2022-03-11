@@ -56,18 +56,17 @@ function App() {
   return (
     <div className='stacks'>  
       <Stack stack={ initialStack } /> 
-      <Button value='initial' buttonText='My card is in this stack' onClick={ handleClick }/>
+      <Button value='initial' onClick={ handleClick }> My card is here </Button>
     
       <Stack stack={ middleStack } />
-      <Button value='middle' buttonText='My card is in this stack' onClick={ handleClick }/>
+      <Button value='middle' onClick={ handleClick }> My card is here </Button>
     
       <Stack stack={ lastStack } />
-      <Button value='last' buttonText='My card is in this stack' onClick={ handleClick }/>
+      <Button value='last' onClick={ handleClick }> My card is here </Button>
     </div>
   );
 }
 
 export default App;
 
-// usar children nos buttons
-// usar Card em ChosenCard
+
