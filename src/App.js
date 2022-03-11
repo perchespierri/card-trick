@@ -56,9 +56,6 @@ function App() {
   
   return (
     <div className='stacks'>  
-      <h1>CHOOSE A CARD</h1>
-      <h1>CLICK ON THE STACK IT IS</h1>
-      <h1>DO THAT 3 TIMES AND I'LL GUESS YOUR CARD</h1>
       <Stack stack={ initialStack } /> 
       <Button value='initial' buttonText='My card is in this stack' onClick={ handleClick }/>
     
