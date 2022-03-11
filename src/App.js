@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createDeck, sliceDeckInThree, switchStacks } from './functions/deck.js';
 import { shuffle } from './functions/array.js';
-import { CARDS_TO_USE_TRICK_1 } from './constants';
+import { CARDS_TO_USE_TRICK_1, FINAL_TRICK_STEP } from './constants';
 import Stack from './components/Stack';
 import Button from './components/Button';
 import ChosenCard from './components/ChosenCard';
@@ -32,7 +32,7 @@ function App() {
     setTrickStep(trickStep + 1)
   };
 
-  return (trickStep === 3 ? (
+  return (trickStep === FINAL_TRICK_STEP ? (
     <ChosenCard card={middleStack[3]} />) : (  
       <div className='stacks'>  
         <Stack stack={ initialStack } /> 
