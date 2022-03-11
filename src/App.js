@@ -1,47 +1,47 @@
-import { createDeck, shuffle, sliceInThree } from './functions';
+import React, { useState } from 'react';
+import { createDeck, sliceDeckInThree, switchStacks } from './functions/deck.js';
+import { shuffle } from './functions/array.js';
+import { CARDS_TO_USE_TRICK_1 } from './constants';
 import Stack from './components/Stack';
+import Button from './components/Button';
 import './styles/global.css';
-const CARDS_TO_SHOW = 21;
+
+const deck = createDeck();
+const shuffledDeck = shuffle(deck);
+const deck21cards = shuffledDeck.slice(0, CARDS_TO_USE_TRICK_1);
+const { stack1, stack2, stack3 } = sliceDeckInThree(deck21cards);
 
 function App() {
-  const deck = createDeck();
-  const shuffledDeck = shuffle(deck);
-  const deck21cards = shuffledDeck.slice(0, CARDS_TO_SHOW);
-  const { initialStack, middleStack, lastStack } = sliceInThree(deck21cards);
+  const [initialStack, setInitialStack] = useState(stack1);
+  const [middleStack, setMiddleStack] = useState(stack2);
+  const [lastStack, setLastStack] = useState(stack3);
+  const [trickStep, setTrickStep] = useState(0);
 
-  const handleClick = () => {
-    console.log('Cheguei aqui')
-  }
+  const handleClick = (stackName) => {
+
+    const switchedDeck = switchStacks({
+      stackName, initialStack, middleStack, lastStack
+    });
+
+    const { stack1, stack2, stack3 } = sliceDeckInThree(switchedDeck);
+
+    setInitialStack(stack1);
+    setMiddleStack(stack2);
+    setLastStack(stack3);
+    setTrickStep(trickStep + 1)
+  };
 
   return (
-    <div className='stacks'>  
-      <Stack stack={ initialStack } />
-      <button
-        className='btn'
-        type='button'
-        onClick={ handleClick }
-      >
-        My card is in this stack
-      </button>
-    
-      <Stack stack={ middleStack } />
-      <button
-        className='btn'
-        type='button'
-        onClick={ handleClick }
-      >
-        My card is in this stack
-      </button>
-    
-      <Stack stack={ lastStack } />
-      <button
-        className='btn'
-        type='button'
-        onClick={ handleClick }
-      >
-        My card is in this stack
-      </button>
-    </div>
+      <div className='stacks'>  
+        <Stack stack={ initialStack } /> 
+        <Button value='initial' onClick={ handleClick }/>
+      
+        <Stack stack={ middleStack } />
+        <Button value='middle' onClick={ handleClick }/>
+      
+        <Stack stack={ lastStack } />
+        <Button value='last' onClick={ handleClick }/>
+      </div>
   );
 }
 
