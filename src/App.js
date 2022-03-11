@@ -48,6 +48,7 @@ function App() {
     return (
       <div>
         <ChosenCard card={middleStack[ELEVENTH_CARD]} />
+        <br />
         <Button value={FIRST_TRICK_1_STEP} buttonText='Play again' onClick={ handleReset }/>
       </div>
     );
