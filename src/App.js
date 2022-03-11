@@ -16,7 +16,7 @@ function App() {
   const [initialStack, setInitialStack] = useState(stack1);
   const [middleStack, setMiddleStack] = useState(stack2);
   const [lastStack, setLastStack] = useState(stack3);
-  const [trickStep, setTrickStep] = useState(0);
+  const [trickStep, setTrickStep] = useState(FIRST_TRICK_1_STEP);
 
   const handleClick = (stackName) => {
 
