@@ -1,34 +1,44 @@
 import { shuffle } from '../array.js'
 
-const orderedArray = [1, 2, 3, 4, 5];
-const shuffledArray = shuffle(orderedArray);
+describe("Function shuffle", () => {
 
-const arrayOfTruth = shuffledArray.map((element) => {
-  if (orderedArray.includes(element)) return true
-  else return false
-});
-
-const shuffleEmptyArray = shuffle([]);
-
-describe("Function shuffle should return a shuffled array", () => {
-  it("Shuffled array has same elements and length than the original", () => {
-    expect(arrayOfTruth).toStrictEqual([true, true, true, true, true]);
-  });
-
-  it("Ordered and shuffled arrays are actually different", () => {
+  it("Given an array, returns different array", () => {
+    const orderedArray = [1, 2, 3, 4, 5];
+    const shuffledArray = shuffle(orderedArray); 
     expect(orderedArray).not.toStrictEqual(shuffledArray)
   });
 
+  it('Given an array, returns an array containing same elements from original', () => {
+    const testArray = [1, 2, 3, 4, 5];
+    const shuffledTestArray = shuffle(testArray);
+
+    testArray.forEach(item => {
+      expect(shuffledTestArray).toEqual(expect.arrayContaining([item]));
+    });
+  });
+
   it("Given an empty array, returns it", () => {
-    expect(shuffleEmptyArray).toStrictEqual([]);
+    const shuffledEmptyArray = shuffle([]);
+    const expectedEmptyArray = [];
+    expect(shuffledEmptyArray).toStrictEqual(expectedEmptyArray);
+  });
+
+  it("Given an array of 1 item, returns it", () => {
+    const shuffledOneItemArray = shuffle([1]);
+    const expectedOneItemArray = [1];
+    expect(shuffledOneItemArray).toStrictEqual(expectedOneItemArray);
   });
 
   it("Given no arguments, returns error message", () => {
-    expect(shuffle()).toStrictEqual('Use an iterable array');
+    const shuffleEmpty = shuffle();
+    const expectedShuffleEmptyReturn = 'Use an iterable array';
+    expect(shuffleEmpty).toStrictEqual(expectedShuffleEmptyReturn);
   });
   
-  it("Given an array of 1 item, returns error message", () => {
-    expect(shuffle(2)).toStrictEqual('Use an iterable array');
+  it("Given a number as parameter, returns error message", () => {
+    const shuffleNumber = shuffle(2);
+    const expectedShuffleNumberReturn = 'Use an iterable array';
+    expect(shuffleNumber).toStrictEqual(expectedShuffleNumberReturn);
   });
 
 });

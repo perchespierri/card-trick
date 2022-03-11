@@ -1,5 +1,6 @@
 # Card Trick Challenge
-A study of React fundamentals.
+A study of React fundamentals.\
+Vercel preview: https://card-trick-three.vercel.app/ 
 
 ## How it works:
 - Pick a card

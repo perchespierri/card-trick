@@ -84,19 +84,26 @@ describe("Function sliceDeckInThree", () => {
 describe("Function switchStacks", () => {
   const testDeck21Cards = createDeck().slice(0, 21);
   const slicedDeck21Cards = sliceDeckInThree(testDeck21Cards);
-
   const { stack1, stack2, stack3 } = slicedDeck21Cards;
-  const switchInitial = switchStacks({ stackName: 'initial', initialStack: stack1, middleStack: stack2, lastStack: stack3 });
-  const switchMiddle = switchStacks({ stackName: 'middle', initialStack: stack1, middleStack: stack2, lastStack: stack3 });
-  const switchLast = switchStacks({ stackName: 'last', initialStack: stack1, middleStack: stack2, lastStack: stack3 });
-
-  it("Case initial - Swaps middle and initial stacks", () => {
-    expect(switchInitial).toStrictEqual([...stack2, ...stack1, ...stack3]);
+  
+  describe('Case initial', () => {
+    it('Swaps middle and initial stacks', () => {
+      const switchInitial = switchStacks({ stackName: 'initial', initialStack: stack1, middleStack: stack2, lastStack: stack3 });
+      expect(switchInitial).toStrictEqual([...stack2, ...stack1, ...stack3]);
+    });  
   });
-  it("Case middle - Swaps initial and last stacks", () => {
-    expect(switchMiddle).toStrictEqual([...stack3, ...stack2, ...stack1]);
+  
+  describe('Case middle', () => {
+    it('Swaps middle and initial stacks', () => {
+      const switchMiddle = switchStacks({ stackName: 'middle', initialStack: stack1, middleStack: stack2, lastStack: stack3 });
+      expect(switchMiddle).toStrictEqual([...stack3, ...stack2, ...stack1]);
+    });  
   });
-  it("Case last - Swaps middle and last stacks", () => {
-    expect(switchLast).toStrictEqual([...stack1, ...stack3, ...stack2]);
+  
+  describe('Case last', () => {
+    it('Swaps middle and last stacks', () => {
+      const switchLast = switchStacks({ stackName: 'last', initialStack: stack1, middleStack: stack2, lastStack: stack3 });
+      expect(switchLast).toStrictEqual([...stack1, ...stack3, ...stack2]);
+    });  
   });
 });
