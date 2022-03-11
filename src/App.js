@@ -32,22 +32,32 @@ function App() {
     setTrickStep(trickStep + 1)
   };
 
-
+  const handleReset = (FIRST_TRICK_1_STEP) => {
+    const deck = createDeck();
+    const shuffledDeck = shuffle(deck);
+    const deck21cards = shuffledDeck.slice(0, CARDS_TO_USE_TRICK_1);
+    const { stack1, stack2, stack3 } = sliceDeckInThree(deck21cards);
+    
+    setInitialStack(stack1);
+    setMiddleStack(stack2);
+    setLastStack(stack3);
+    setTrickStep(FIRST_TRICK_1_STEP)
+  }
 
   return (trickStep === FINAL_TRICK_1_STEP ? (
     <div>
       <ChosenCard card={middleStack[ELEVENTH_CARD]} />
-      <Button value={FIRST_TRICK_1_STEP} onClick={ setTrickStep }/>
+      <Button value={FIRST_TRICK_1_STEP} buttonText='Play again' onClick={ handleReset }/>
     </div>) : (  
       <div className='stacks'>  
         <Stack stack={ initialStack } /> 
-        <Button value='initial' onClick={ handleClick }/>
+        <Button value='initial' buttonText='My card is in this stack' onClick={ handleClick }/>
       
         <Stack stack={ middleStack } />
-        <Button value='middle' onClick={ handleClick }/>
+        <Button value='middle' buttonText='My card is in this stack' onClick={ handleClick }/>
       
         <Stack stack={ lastStack } />
-        <Button value='last' onClick={ handleClick }/>
+        <Button value='last' buttonText='My card is in this stack' onClick={ handleClick }/>
       </div>
     )
   );
