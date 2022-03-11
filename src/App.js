@@ -46,10 +46,10 @@ function App() {
 
   if(trickStep === FINAL_TRICK_1_STEP) {
     return (
-      <div>
+      <>
         <ChosenCard card={ middleStack[ELEVENTH_CARD] } />
-        <button className='btn' onClick={ handleReset }> Play again </button>
-      </div>
+        <button className='btn' onClick={ handleReset }> Yes! Play again </button>
+      </>
     );
   } 
   
