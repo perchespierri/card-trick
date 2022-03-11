@@ -4,7 +4,6 @@ import { shuffle } from './functions/array.js';
 import { CARDS_TO_USE_TRICK_1 } from './constants';
 import Stack from './components/Stack';
 import Button from './components/Button';
-import ChosenCard from './components/ChosenCard';
 import './styles/global.css';
 
 const deck = createDeck();
@@ -32,8 +31,7 @@ function App() {
     setTrickStep(trickStep + 1)
   };
 
-  return (trickStep === 3 ? (
-    <ChosenCard card={middleStack[3]} />) : (  
+  return (
       <div className='stacks'>  
         <Stack stack={ initialStack } /> 
         <Button value='initial' onClick={ handleClick }/>
@@ -44,7 +42,6 @@ function App() {
         <Stack stack={ lastStack } />
         <Button value='last' onClick={ handleClick }/>
       </div>
-    )
   );
 }
 
