@@ -32,7 +32,7 @@ function App() {
     setTrickStep(trickStep + 1)
   };
 
-  const handleReset = (FIRST_TRICK_1_STEP) => {
+  const handleReset = () => {
     const deck = createDeck();
     const shuffledDeck = shuffle(deck);
     const deck21cards = shuffledDeck.slice(0, CARDS_TO_USE_TRICK_1);
@@ -48,8 +48,7 @@ function App() {
     return (
       <div>
         <ChosenCard card={middleStack[ELEVENTH_CARD]} />
-        <br />
-        <Button value={FIRST_TRICK_1_STEP} buttonText='Play again' onClick={ handleReset }/>
+        <button className='btn' onClick={ handleReset }> Play again </button>
       </div>
     );
   } 
@@ -69,3 +68,6 @@ function App() {
 }
 
 export default App;
+
+// usar children nos buttons
+// usar Card em ChosenCard
