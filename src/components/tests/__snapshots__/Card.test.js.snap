@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component Renders card clubs correctly 1`] = `
+<div>
+  A
+  <div
+    class="Card__suit--image Card__suit--clubs"
+  />
+</div>
+`;
+
+exports[`Card component Renders card of any value correctly 1`] = `
+<div>
+  TEST VALUE
+  <div
+    class="Card__suit--image Card__suit--clubs"
+  />
+</div>
+`;
+
+exports[`Card component Renders card of diamonds correctly 1`] = `
+<div>
+  A
+  <div
+    class="Card__suit--image Card__suit--diamonds"
+  />
+</div>
+`;
+
+exports[`Card component Renders card of hearts correctly 1`] = `
+<div>
+  A
+  <div
+    class="Card__suit--image Card__suit--hearts"
+  />
+</div>
+`;
+
+exports[`Card component Renders card of spades correctly 1`] = `
+<div>
+  A
+  <div
+    class="Card__suit--image Card__suit--spades"
+  />
+</div>
+`;
