@@ -3,6 +3,7 @@ import { createDeck, sliceDeckInThree, switchStacks } from './functions/deck.js'
 import { shuffle } from './functions/array.js';
 import { CARDS_TO_USE_TRICK_1 } from './constants';
 import Stack from './components/Stack';
+import Button from './components/Button';
 import ChosenCard from './components/ChosenCard';
 import './styles/global.css';
 
@@ -32,38 +33,19 @@ function App() {
   };
 
   return (trickStep === 3 ? (
-    <div>
-      <ChosenCard card={middleStack[3]} />
-    </div>) : (
-        <div className='stacks'>  
+    <ChosenCard card={middleStack[3]} />) : (  
+      <div className='stacks'>  
         <Stack stack={ initialStack } /> 
-        <button
-          className='btn'
-          type='button'
-          onClick={ () => handleClick('initial') }
-        >
-          My card is in this stack
-        </button>
+        <Button value='initial' onClick={ handleClick }/>
       
         <Stack stack={ middleStack } />
-        <button
-          className='btn'
-          type='button'
-          onClick={ () => handleClick('middle') }
-        >
-          My card is in this stack
-        </button>
+        <Button value='middle' onClick={ handleClick }/>
       
         <Stack stack={ lastStack } />
-        <button
-          className='btn'
-          type='button'
-          onClick={ () => handleClick('last') }
-        >
-          My card is in this stack
-        </button>
+        <Button value='last' onClick={ handleClick }/>
       </div>
-    ));
+    )
+  );
 }
 
 export default App;
