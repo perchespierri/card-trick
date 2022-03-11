@@ -37,7 +37,7 @@ function App() {
   return (trickStep === FINAL_TRICK_STEP ? (
     <div>
       <ChosenCard card={middleStack[ELEVENTH_CARD]} />
-      <Button value={FIRST_TRICK_STEP} onClick={ setTrickStep }/>
+      <Button value={ FIRST_TRICK_STEP } onClick={ setTrickStep }/>
     </div>) : (  
       <div className='stacks'>  
         <Stack stack={ initialStack } /> 
