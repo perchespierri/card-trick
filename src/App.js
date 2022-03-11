@@ -47,7 +47,7 @@ function App() {
   if(trickStep === FINAL_TRICK_1_STEP) {
     return (
       <div>
-        <ChosenCard card={middleStack[ELEVENTH_CARD]} />
+        <ChosenCard card={ middleStack[ELEVENTH_CARD] } />
         <button className='btn' onClick={ handleReset }> Play again </button>
       </div>
     );
@@ -56,13 +56,13 @@ function App() {
   return (
     <div className='stacks'>  
       <Stack stack={ initialStack } /> 
-      <Button value='initial' onClick={ handleClick }> My card is here </Button>
+      <Button value='initial' onClick={ handleClick } />
     
       <Stack stack={ middleStack } />
-      <Button value='middle' onClick={ handleClick }> My card is here </Button>
+      <Button value='middle' onClick={ handleClick } />
     
       <Stack stack={ lastStack } />
-      <Button value='last' onClick={ handleClick }> My card is here </Button>
+      <Button value='last' onClick={ handleClick } />
     </div>
   );
 }
