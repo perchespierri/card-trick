@@ -11,5 +11,4 @@ const ChosenCard = ({ card }) => {
     </div>
   )
 }
-
 export default ChosenCard
